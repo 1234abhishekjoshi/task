@@ -49,6 +49,8 @@
             <!-- BEGIN REGISTRATION FORM -->
             <form class="register-form"  (ngSubmit)="createUser()" method="post">
                 <h3 class="font-green">Sign Up</h3>
+                <div class="alert alert-danger" style="display: none;"></div>
+                <div class="alert alert-success" style="display: none;"></div>
                 <p class="hint"> Enter your personal details below: </p>
                 <div class="form-group">
                     <label class="control-label visible-ie8 visible-ie9">Full Name</label>
