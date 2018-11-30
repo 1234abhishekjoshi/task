@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../service/http.service';
+import { Router }  from '@angular/router';
 declare var $ : any;
 @Component({
   selector: 'app-user',
@@ -8,7 +9,7 @@ declare var $ : any;
 })
 export class UserComponent implements OnInit {
  model : any = {};
-  constructor(private http : HttpService) { }
+  constructor(private http : HttpService,private router : Router) { }
 
   ngOnInit() {
   }
@@ -27,6 +28,20 @@ export class UserComponent implements OnInit {
   				$('.alert-success').hide();
   				$('.alert-danger').show();
   				$('.alert-danger').html(res.message);
+  			}
+  		});
+  	}
+  }
+  login(){
+  	
+  	var re = /\S+@\S+\.\S+/;
+     		var rest = re.test(this.model.username)
+  	if(this.model.username != 'undefined' && this.model.loginpassword != 'undefined' && rest==true){
+  		this.http.login(this.model);
+  		this.http.logincheck.subscribe((res)=>{
+  			if(res.status){
+  				localStorage.setItem('userDetail',JSON.stringify(res));
+  				this.router.navigate(['/home']); 
   			}
   		});
   	}
