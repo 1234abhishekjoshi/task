@@ -1,0 +1,87 @@
+
+<div class="page-container-bg-solid">
+        <app-home></app-home>
+        <!-- BEGIN CONTAINER -->
+        <div class="page-container">
+            <!-- BEGIN CONTENT -->
+            <div class="page-content-wrapper">
+                <!-- BEGIN CONTENT BODY -->
+                <!-- BEGIN PAGE HEAD-->
+                <div class="page-head">
+                    <div class="container">
+                        <!-- BEGIN PAGE TITLE -->
+                        <div class="page-title">
+                            <h1> </h1>
+                        </div>
+                        <!-- END PAGE TITLE -->
+                       
+                    </div>
+                </div>
+                <!-- END PAGE HEAD-->
+                <!-- BEGIN PAGE CONTENT BODY -->
+                <div class="page-content">
+                    <div class="container">
+                        <!-- BEGIN PAGE BREADCRUMBS -->
+                        
+                        <!-- END PAGE BREADCRUMBS -->
+                        <!-- BEGIN PAGE CONTENT INNER -->
+                        <div class="page-content-inner">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="portlet light portlet-fit ">
+                                        <div class="portlet-title">
+                                            <div class="caption">
+                                                <i class=" icon-layers font-green"></i>
+                                                <span class="caption-subject font-green bold uppercase">transaction</span>
+                                            </div>
+                                        </div>
+                                        <div class="portlet-body">
+                                            <table class="table table-stripe table-bordered">
+                                            	<tr>
+                                            		<td>ID</td>
+                                            		<td colspan="3">Detail</td>
+                                            		<td>Total Amount</td>
+                                            		
+                                            		
+                                            	</tr>
+                                            	<tr *ngFor="let t of transaction let i=index;">
+                                            		<td>{{ i+1 }}</td>
+                                            		<td colspan="
+                                            		3">
+                                            			<table class="table table-bordered">
+                                            			<tr><td>image</td>
+                                            				<td>name</td>
+                                            				<td>price</td>
+                                            			</tr>
+                                            			<tr *ngFor="let p of t.products">
+                                            				  <td><img src="{{ p.image}}" style="width:250px;" /></td>
+                                            				  <td>{{ p.name }}</td>
+                                            				  <td>${{ p.price }}</td>
+                                            				</tr>
+                                            			</table>
+                                            		</td>
+                                            		<td>${{ t.amount }}</td>
+                                            		
+                                            	</tr>
+
+                                            </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                           
+                        </div>
+                        <!-- END PAGE CONTENT INNER -->
+                    </div>
+                </div>
+                <!-- END PAGE CONTENT BODY -->
+                <!-- END CONTENT BODY -->
+            </div>
+            <!-- END CONTENT -->
+           
+           
+        </div>
+        <!-- END CONTAINER -->
+        
+       
+ </div>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../service/http.service';
 import { Router }  from '@angular/router';
+import {environment} from '../../environments/environment';
+
 declare var $ : any;
 @Component({
   selector: 'app-home',
@@ -11,9 +13,11 @@ export class HomeComponent implements OnInit {
 cartItems : any;
 cartCount : any;
 totalPrice : any;
+imageurl : any;
   constructor(private router:Router,private http:HttpService) { 
   	this.cartCount =0;
   	this.totalPrice = 0;
+    this.imageurl = 'assets/layouts/layout3/img/avatar9.jpg';
   }
 
   ngOnInit() {
@@ -33,7 +37,9 @@ totalPrice : any;
 
   			
   	var token = JSON.parse(localStorage.getItem('userDetail'));
-  	if(token != ""){
+    console.log(token);
+  	if(token != null){
+      this.imageurl = environment.baseurl+'uploads/'+token.image;
   		this.http.cardData.subscribe((res)=>{
   			
   			this.cartItems = res;
@@ -53,6 +59,11 @@ totalPrice : any;
   	}else{
   		this.router.navigate(['/']);
   	}
+  }
+
+  logout(){
+    localStorage.removeItem('userDetail');
+    this.router.navigate(['/']);
   }
 
 

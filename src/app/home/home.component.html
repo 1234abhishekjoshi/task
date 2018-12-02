@@ -5,8 +5,8 @@
                 <div class="container">
                     <!-- BEGIN LOGO -->
                     <div class="page-logo">
-                        <a href="index.html">
-                            <img src="../assets/layouts/layout3/img/logo-default.jpg" alt="logo" class="logo-default">
+                        <a href="/home">
+                           HOME
                         </a>
                     </div>
                     <!-- END LOGO -->
@@ -23,13 +23,13 @@
                                     <span class="badge badge-default" *ngIf="cartCount != 0">{{ cartCount }}</span>
                                 </a>
                                 <ul class="dropdown-menu">
-                                    <!-- <li class="external">
-                                        <h3>You have
-                                            <strong>12 pending</strong> tasks</h3>
-                                        <a href="app_todo.html">view all</a>
-                                    </li> -->
+                                    <li class="external">
+                                        <h3>
+                                            <strong>Tota :-${{ totalPrice }}</strong></h3>
+                                        <button class="btn btn-primary" style="float:right;" routerLink="/checkout">Checkout</button>
+                                    </li>
                                     <li>
-                                        <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 250px;"><ul class="dropdown-menu-list scroller" style="height: 250px; overflow: hidden; width: auto;" data-handle-color="#637283" data-initialized="1">
+                                        <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 250px;"><ul class="dropdown-menu-list scroller" style="height: 250px; overflow: scroll; width: auto;" data-handle-color="#637283" data-initialized="1">
                                             <li *ngFor="let p of cartItems">
                                                 <a href="javascript:;">
                                                     <span class="time">${{ p.price }}</span>
@@ -39,21 +39,33 @@
                                                         </span>{{ p.name }}</span>
                                                 </a>
                                             </li>
-                                            <li>
-                                                <span class="details" style="color:#fff;">
-                                                    Total : <span >${{ totalPrice }}<a href="javascript:;" style="float:right;padding:2px;" class="btn btn-primary">Checkout</a></span>
-                                                    
-                                                </span>
+                                            
 
-                                            </li>
                                            
                                         </ul><div class="slimScrollBar" style="background: rgb(99, 114, 131); width: 7px; position: absolute; top: 15px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 121.359px;"></div><div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(234, 234, 234); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
                                     </li>
+                                   
                                 </ul>
                             </li>
-                            
+                             <li class="dropdown dropdown-user dropdown-dark">
+                                <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                                    <img alt="" class="img-circle" src="{{ imageurl }}">
+                                    <span class="username username-hide-mobile"></span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-default">
+                                    <li>
+                                        <a href="javascript:;" routerLink="/transaction">
+                                            <i class="icon-calendar"></i> transaction detail </a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:;" routerLink="/profile">
+                                            <i class="icon-user"></i>update Profile </a>
+                                    </li>
+                                   
+                                </ul>
+                            </li>
                             <!-- BEGIN QUICK SIDEBAR TOGGLER -->
-                            <li class="dropdown dropdown-extended quick-sidebar-toggler">
+                            <li class="dropdown dropdown-extended quick-sidebar-toggler" (click)="logout()">
                                 <span class="sr-only">Toggle Quick Sidebar</span>
                                 <i class="icon-logout"></i>
                             </li>

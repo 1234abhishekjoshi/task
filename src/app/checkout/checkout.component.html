@@ -1,0 +1,63 @@
+<div class="page-container-bg-solid">
+        <app-home></app-home>
+        <!-- BEGIN CONTAINER -->
+        <div class="page-container">
+            <!-- BEGIN CONTENT -->
+            <div class="page-content-wrapper">
+                <!-- BEGIN CONTENT BODY -->
+                <!-- BEGIN PAGE HEAD-->
+                <div class="page-head">
+                    <div class="container">
+                        <!-- BEGIN PAGE TITLE -->
+                        <div class="page-title">
+                            <h1>Checkout  <a href="javascript:;" routerLink="/home" style="float:right">Back</a></h1>
+                        </div>
+                        <!-- END PAGE TITLE -->
+                       
+                    </div>
+                </div>
+                <!-- END PAGE HEAD-->
+                <!-- BEGIN PAGE CONTENT BODY -->
+                <div class="page-content">
+                    <div class="container">
+                        <!-- BEGIN PAGE BREADCRUMBS -->
+                        
+                        <!-- END PAGE BREADCRUMBS -->
+                        <!-- BEGIN PAGE CONTENT INNER -->
+                        <div class="page-content-inner">
+                            <table>
+                            	<tr>
+                            		<td>Image</td>
+                            		<td>Product Name</td>
+                            		<td>Product Price</td>
+                            		<td>&nbsp;</td>
+                            	</tr>
+                            	<tr *ngFor="let p of cartItems">
+                            		<td><img src="{{ p.image}}" style="width:150px;" /></td>
+                            		<td>{{ p.name }}</td>
+                            		<td>${{ p.price }}</td>
+                            		<td><a href="javascript:;" (click)="removeCartItem(p.id)">Remove</a></td>
+                            	</tr>
+                            	<tr>
+                            		<td>Total : </td>
+                            		<td>${{ totalPrice }}</td>
+                            		<td>&nbsp;</td>
+                            		<td><button class="btn btn-primary" (click)="goToStripe()">Payment</button></td>
+                            	</tr>
+                            </table>
+                           
+                        </div>
+                        <!-- END PAGE CONTENT INNER -->
+                    </div>
+                </div>
+                <!-- END PAGE CONTENT BODY -->
+                <!-- END CONTENT BODY -->
+            </div>
+            <!-- END CONTENT -->
+           
+           
+        </div>
+        <!-- END CONTAINER -->
+        
+       
+ </div>

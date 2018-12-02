@@ -1,0 +1,107 @@
+
+<div class="page-container-bg-solid">
+        <app-home></app-home>
+        <!-- BEGIN CONTAINER -->
+        <div class="page-container">
+            <!-- BEGIN CONTENT -->
+            <div class="page-content-wrapper">
+                <!-- BEGIN CONTENT BODY -->
+                <!-- BEGIN PAGE HEAD-->
+                <div class="page-head">
+                    <div class="container">
+                        <!-- BEGIN PAGE TITLE -->
+                        <div class="page-title">
+                            <h1> </h1>
+                        </div>
+                        <!-- END PAGE TITLE -->
+                       
+                    </div>
+                </div>
+                <!-- END PAGE HEAD-->
+                <!-- BEGIN PAGE CONTENT BODY -->
+                <div class="page-content">
+                    <div class="container">
+                        <!-- BEGIN PAGE BREADCRUMBS -->
+                        
+                        <!-- END PAGE BREADCRUMBS -->
+                        <!-- BEGIN PAGE CONTENT INNER -->
+                        <div class="page-content-inner">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="portlet light portlet-fit ">
+                                        <div class="portlet-title">
+                                            <div class="caption">
+                                                <i class=" icon-layers font-green"></i>
+                                                <span class="caption-subject font-green bold uppercase">Profile</span>
+                                            </div>
+                                        </div>
+                                        <div class="portlet-body">
+                                       <img src="{{ imageurl}}" style="width:250px;" />
+                                        	<form enctype="multipart/form-data">
+                                        	<div class="form-group">
+                                                        <label for="exampleInputFile1">Change Profile Pic</label>
+                                                        <input type="file" id="image" (change)="uploadPhoto($event)" name="image">
+                                                    </div>
+                                                </form>
+                                                    <hr/>
+                                            <form role="form" (ngSubmit)="changePassword()">
+                                                <div class="form-body">
+                                                    
+                                                    <label>Change Password</label>
+                                                    <div class="form-group">
+                                                        <label for="exampleInputPassword1">Old Password</label>
+                                                        <div class="input-group">
+                                                            <input type="password" class="form-control" id="oldPassword" name="oldpassword" [(ngModel)]="model.oldpassword" placeholder="Password">
+                                                            <span class="input-group-addon">
+                                                                <i class="fa fa-user font-red"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="exampleInputPassword1">New Password</label>
+                                                        <div class="input-group">
+                                                            <input type="password" class="form-control" id="newpassword" name="newpassword" [(ngModel)]="model.newpassword" placeholder="Password">
+                                                            <span class="input-group-addon">
+                                                                <i class="fa fa-user font-red"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="exampleInputPassword1">Re-type Password</label>
+                                                        <div class="input-group">
+                                                            <input type="password" class="form-control" id="rPassword" name="rpassword" [(ngModel)]="model.rpassword" placeholder="Password">
+                                                            <span class="input-group-addon">
+                                                                <i class="fa fa-user font-red"></i>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                   
+                                                </div>
+                                                <div class="form-actions">
+                                                    <button type="submit" class="btn blue">Submit</button>
+                                                    <button type="button" class="btn default">Cancel</button>
+                                                </div>
+                                            </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                           
+                        </div>
+                        <!-- END PAGE CONTENT INNER -->
+                    </div>
+                </div>
+                <!-- END PAGE CONTENT BODY -->
+                <!-- END CONTENT BODY -->
+            </div>
+            <!-- END CONTENT -->
+           
+           
+        </div>
+        <!-- END CONTAINER -->
+        
+       
+ </div>
+<p>
+  profile works!
+</p>

@@ -9,9 +9,13 @@ declare var $ : any;
 })
 export class UserComponent implements OnInit {
  model : any = {};
-  constructor(private http : HttpService,private router : Router) { }
+  constructor(private http : HttpService,private router : Router) {
+   }
 
   ngOnInit() {
+    if(JSON.parse(localStorage.getItem('userDetail')) != null){
+      this.router.navigate(['/home']);
+    }
   }
   createUser(){
   		 var re = /\S+@\S+\.\S+/;
@@ -43,6 +47,13 @@ export class UserComponent implements OnInit {
   				localStorage.setItem('userDetail',JSON.stringify(res));
   				this.router.navigate(['/home']); 
   			}
+        else{
+
+        
+          $('.alert-success').hide();
+          $('.alert-danger').show();
+          $('.alert-danger').html(res.message);
+        }
   		});
   	}
   }

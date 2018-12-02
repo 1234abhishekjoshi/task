@@ -1,0 +1,58 @@
+
+
+
+<div class="page-container-bg-solid">
+        <!-- <app-home></app-home> -->
+        <!-- BEGIN CONTAINER -->
+        <div class="page-container">
+            <!-- BEGIN CONTENT -->
+            <div class="page-content-wrapper">
+                <!-- BEGIN CONTENT BODY -->
+                <!-- BEGIN PAGE HEAD-->
+                <div class="page-head">
+                    <div class="container">
+                        <!-- BEGIN PAGE TITLE -->
+                        <div class="page-title">
+                            <h1>Stripe Payment </h1>
+                        </div>
+                        <!-- END PAGE TITLE -->
+                        <a href="javascript:;" routerLink="/checkout" style="float:right">Back</a>
+                    </div>
+                </div>
+                <!-- END PAGE HEAD-->
+                <!-- BEGIN PAGE CONTENT BODY -->
+                <div class="page-content">
+                    <div class="container">
+                        <!-- BEGIN PAGE BREADCRUMBS -->
+                        
+                        <!-- END PAGE BREADCRUMBS -->
+                        <!-- BEGIN PAGE CONTENT INNER -->
+                        <div class="page-content-inner col-md-8">
+                        	<div class="alert alert-danger" style="display: none;"></div>
+                        	<div class="alert alert-success" style="display: none;"></div>
+
+                            <form novalidate (ngSubmit)="buy($event)" [formGroup]="stripeTest">
+							  <input type="text" formControlName="name" placeholder="card holder name">
+							  <div id="card-element" class="field"></div>
+							  <button class="btn" style="padding:5px;" type="submit">
+							    Pay
+							  </button>
+                           <button class="btn" style="padding:5px;" routerLink="/home" type="button">Cancel</button>
+
+							</form>
+                        </div>
+
+                        <!-- END PAGE CONTENT INNER -->
+                    </div>
+                </div>
+                <!-- END PAGE CONTENT BODY -->
+                <!-- END CONTENT BODY -->
+            </div>
+            <!-- END CONTENT -->
+           
+           
+        </div>
+        <!-- END CONTAINER -->
+        
+       
+ </div>
